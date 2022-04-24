@@ -19,10 +19,11 @@ public class markdownParseReportVersion {
         }
         CharSequence www = "www";
         CharSequence https = "https://";
+        CharSequence com = ".com";
         for (int i = 0; i < toReturn.size(); i++) {
             // loops through links and checks if they have valid URL's
             String link = toReturn.get(i);
-            if (link.contains(www) == true || link.contains(https) == true) {
+            if (link.contains(www) == true || link.contains(https) == true || link.contains(com)) {
                 continue;
             }
             else {
