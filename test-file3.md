@@ -1,4 +1,4 @@
-[testLink3]([iloveleagueoflegends.com])
+[testLink3]([www.iloveleagueoflegends.com])
 
 
 
