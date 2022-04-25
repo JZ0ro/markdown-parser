@@ -1,7 +1,7 @@
-[testLink3]([i should not see this])
+[testLink3]([iloveleagueoflegends.com])
 
 
 
 
 
-[testLink3](I should not be seeing this either)
+[testLink3](https://admissions.sdsu.edu/)
