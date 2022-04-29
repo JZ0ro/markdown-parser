@@ -30,10 +30,24 @@ public class MarkdownParseTest {
         MarkdownParse linkTester = new MarkdownParse();
         ArrayList<String> links = linkTester.getLinks(content);
         assertEquals("Link printed out should be the same",string.get(0),  links.get(0));
-        assertEquals("getter method should give us an IndexOutOfBoundsException", string.get(1), links.get(1));
     }
     @Test
     public void test() {
         assertEquals("Boolean inputted should be true", true, test);
+    }
+
+    @Test
+    public void falseLinkTest() throws IOException {
+        Path fileName = Paths.get("C:/Users/Justin/Documents/GitHub/markdown-parser/test-file.md");
+        String content = Files.readString(fileName);
+
+        MarkdownParse linkTester = new MarkdownParse();
+        ArrayList<String> links = linkTester.getLinks(content);
+        try {
+            links.get(1);
+            fail();
+        } catch(IndexOutOfBoundsException e) {
+            System.out.println("index 1 should not exist");
+        }
     }
 }
