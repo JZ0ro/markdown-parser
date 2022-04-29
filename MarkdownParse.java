@@ -23,15 +23,19 @@ public class MarkdownParse {
         for (int i = 0; i < toReturn.size(); i++) {
             // loops through links and checks if they have valid URL's
             String link = toReturn.get(i);
-            if (link.contains(www) == true || link.contains(https) == true || link.contains(com)) {
+            if (link.contains(" ")) {
+                toReturn.remove(i);
                 continue;
-            }
-            else {
+            } if (link.contains(www) == true || link.contains(https) == true || link.contains(com)) {
+                continue;
+            } else {
                 toReturn.remove(i);
             }
         }
         int arraySize = toReturn.size();
         System.out.println(arraySize);
+        
+        
         return toReturn;
     }
     
