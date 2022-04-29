@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MarkdownParseTest {
-    String[] testFile1Output = {"https://something.com", "some-thing.html"};
+    String[] testFile1Output = {"www.skylanders", " www.roblox.com"};
     ArrayList<String> stringOutput = new ArrayList<String>();
     List string = Arrays.asList(testFile1Output);
     boolean test = true;
@@ -24,7 +24,7 @@ public class MarkdownParseTest {
 
     @Test
     public void linkGetter () throws IOException {
-        Path fileName = Paths.get("C:/Users/Justin/Documents/GitHub/markdown-parser/test-file.md");
+        Path fileName = Paths.get("C:/Users/Justin/Documents/GitHub/markdown-parser/test-file5.md");
         String content = Files.readString(fileName);
 
         MarkdownParse linkTester = new MarkdownParse();
@@ -38,7 +38,7 @@ public class MarkdownParseTest {
 
     @Test
     public void falseLinkTest() throws IOException {
-        Path fileName = Paths.get("C:/Users/Justin/Documents/GitHub/markdown-parser/test-file.md");
+        Path fileName = Paths.get("C:/Users/Justin/Documents/GitHub/markdown-parser/test-file5.md");
         String content = Files.readString(fileName);
 
         MarkdownParse linkTester = new MarkdownParse();
