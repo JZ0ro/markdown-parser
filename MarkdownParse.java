@@ -47,10 +47,6 @@ public class MarkdownParse {
         ArrayList<String> links = getLinks(content);
         System.out.println(links);
         System.out.println(links.get(0));
-<<<<<<< HEAD
-=======
 
-        
->>>>>>> 79edd8311eda08aea48c5c593014a0e47bfc5969
     }
 }
