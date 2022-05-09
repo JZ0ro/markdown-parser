@@ -20,6 +20,7 @@ public class MarkdownParse {
         CharSequence www = "www";
         CharSequence https = "https://";
         CharSequence com = ".com";
+        CharSequence commitTester = "Line to be seen as a new commit";
         for (int i = 0; i < toReturn.size(); i++) {
             // loops through links and checks if they have valid URL's
             String link = toReturn.get(i);
@@ -46,5 +47,7 @@ public class MarkdownParse {
         ArrayList<String> links = getLinks(content);
         System.out.println(links);
         System.out.println(links.get(0));
+
+        
     }
 }
