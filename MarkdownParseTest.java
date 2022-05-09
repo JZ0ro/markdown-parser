@@ -48,6 +48,7 @@ public class MarkdownParseTest {
             fail();
         } catch(IndexOutOfBoundsException e) {
             System.out.println("index 1 should not exist");
+            System.out.println("index one million should not exist");
         }
     }
 }
