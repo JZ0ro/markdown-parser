@@ -55,10 +55,13 @@ public class MarkdownParseTest {
     @Test
     public void snippetTest1() throws IOException {
         Path fileName = Paths.get("C:/Users/Justin/Documents/GitHub/markdown-parser/Snippet-1.md");
-        String content = Files.readString(fileName);
+        String[] snippet1Output = {"`google.com", "google.com", "ucsd.edu"};
+        String fileContent = Files.readString(fileName);
 
         MarkdownParse linkTester = new MarkdownParse();
-        ArrayList<String> links = linkTester.getLinks(content);
-        assertEquals("Link printed out should be the same",string.get(0),  links.get(0));
+        ArrayList<String> links = linkTester.getLinks(fileContent);
+        List expectedLinks = Arrays.asList(snippet1Output);
+
+        assertEquals("Link printed out should be the same", expectedLinks.get(0), links.get(0));
     }
 }
