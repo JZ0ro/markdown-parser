@@ -51,4 +51,17 @@ public class MarkdownParseTest {
             System.out.println("index one million should not exist");
         }
     }
+
+    @Test
+    public void snippetTest1() throws IOException {
+        Path fileName = Paths.get("C:/Users/Justin/Documents/GitHub/markdown-parser/Snippet-1.md");
+        String[] snippet1Output = {"`google.com", "google.com", "ucsd.edu"};
+        String fileContent = Files.readString(fileName);
+
+        MarkdownParse linkTester = new MarkdownParse();
+        ArrayList<String> links = linkTester.getLinks(fileContent);
+        List expectedLinks = Arrays.asList(snippet1Output);
+
+        assertEquals("Link printed out should be the same", expectedLinks.get(0), links.get(0));
+    }
 }
