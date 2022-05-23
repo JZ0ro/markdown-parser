@@ -55,14 +55,16 @@ public class MarkdownParseTest {
     @Test
     public void snippetTest1() throws IOException {
         Path fileName = Paths.get("C:/Users/justi/Desktop/github folder/markdown-parser/Snippet-1.md");
-        String[] snippet1Output = {"`google.com", "google.com", "ucsd.edu"};
+        String[] snippet2Output = {"`google.com", "google.com", "ucsd.edu"};
         String fileContent = Files.readString(fileName);
 
         MarkdownParse linkTester = new MarkdownParse();
         ArrayList<String> links = linkTester.getLinks(fileContent);
-        List expectedLinks = Arrays.asList(snippet1Output);
+        List expectedLinks = Arrays.asList(snippet2Output);
 
         assertEquals("Link printed out should be the same", expectedLinks.get(0), links.get(0));
+        assertEquals("Link printed out should be the same", expectedLinks.get(1), links.get(1));
+        assertEquals("Link printed out should be the same", expectedLinks.get(2), links.get(2));
     }
 
     @Test
@@ -74,6 +76,21 @@ public class MarkdownParseTest {
         MarkdownParse linkTester = new MarkdownParse();
         ArrayList<String> links = linkTester.getLinks(fileContent);
         List expectedLinks = Arrays.asList(snippet2Output);
+
+        assertEquals("Link printed out should be the same", expectedLinks.get(0), links.get(0));
+        assertEquals("Link printed out should be the same", expectedLinks.get(1), links.get(1));
+        assertEquals("Link printed out should be the same", expectedLinks.get(2), links.get(2));
+    }
+
+    @Test
+    public void snippetTest3() throws IOException {
+        Path fileName = Paths.get("C:/Users/justi/Desktop/github folder/markdown-parser/Snippet-3.md");
+        String[] snippet3Output = {"https://www.twitter.com", "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule", "(https://cse.ucsd.edu/"};
+        String fileContent = Files.readString(fileName);
+
+        MarkdownParse linkTester = new MarkdownParse();
+        ArrayList<String> links = linkTester.getLinks(fileContent);
+        List expectedLinks = Arrays.asList(snippet3Output);
 
         assertEquals("Link printed out should be the same", expectedLinks.get(0), links.get(0));
         assertEquals("Link printed out should be the same", expectedLinks.get(1), links.get(1));
