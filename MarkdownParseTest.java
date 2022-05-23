@@ -54,7 +54,7 @@ public class MarkdownParseTest {
 
     @Test
     public void snippetTest1() throws IOException {
-        Path fileName = Paths.get("C:/Users/Justin/Documents/GitHub/markdown-parser/Snippet-1.md");
+        Path fileName = Paths.get("C:/Users/justi/Desktop/github folder/markdown-parser/Snippet-1.md");
         String[] snippet1Output = {"`google.com", "google.com", "ucsd.edu"};
         String fileContent = Files.readString(fileName);
 
@@ -63,5 +63,20 @@ public class MarkdownParseTest {
         List expectedLinks = Arrays.asList(snippet1Output);
 
         assertEquals("Link printed out should be the same", expectedLinks.get(0), links.get(0));
+    }
+
+    @Test
+    public void snippetTest2() throws IOException {
+        Path fileName = Paths.get("C:/Users/justi/Desktop/github folder/markdown-parser/Snippet-2.md");
+        String[] snippet2Output = {"a.com", "a.com(())", "example.com"};
+        String fileContent = Files.readString(fileName);
+
+        MarkdownParse linkTester = new MarkdownParse();
+        ArrayList<String> links = linkTester.getLinks(fileContent);
+        List expectedLinks = Arrays.asList(snippet2Output);
+
+        assertEquals("Link printed out should be the same", expectedLinks.get(0), links.get(0));
+        assertEquals("Link printed out should be the same", expectedLinks.get(1), links.get(1));
+        assertEquals("Link printed out should be the same", expectedLinks.get(2), links.get(2));
     }
 }
